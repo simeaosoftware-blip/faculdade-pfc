@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Descarte Consciente de Lixo Eletrônico – Taciba</title>
+<meta name="description" content="Saiba por que o lixo eletrônico é perigoso, como reaproveitar seus aparelhos e onde descartá-los corretamente em Taciba e região.">
+<style>
+  :root{
+    --verde:#1f7a4d; --verde-esc:#145236; --verde-claro:#e8f4ee;
+    --texto:#1d2a24; --cinza:#5b6b63; --borda:#d7e3dc; --amarelo:#f6c344; --vermelho:#c0392b;
+    --raio:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--texto);line-height:1.6;background:#fff}
+  a{color:var(--verde)}
+  .container{max-width:1040px;margin:0 auto;padding:0 20px}
+
+  /* Cabeçalho */
+  header{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--borda)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--verde-esc);text-decoration:none}
+  .logo svg{width:32px;height:32px}
+  .menu{display:flex;gap:22px;list-style:none}
+  .menu a{text-decoration:none;color:var(--texto);font-weight:500;font-size:.95rem}
+  .menu a:hover{color:var(--verde)}
+  .btn-menu{display:none;background:none;border:0;cursor:pointer;padding:8px}
+  .btn-menu span{display:block;width:24px;height:2px;background:var(--texto);margin:5px 0}
+
+  /* Hero */
+  .hero{background:linear-gradient(135deg,var(--verde-esc),var(--verde));color:#fff;padding:72px 0 64px}
+  .hero .tag{display:inline-block;background:rgba(255,255,255,.15);padding:4px 12px;border-radius:99px;font-size:.85rem;margin-bottom:16px}
+  .hero h1{font-size:2.4rem;line-height:1.2;max-width:720px;margin-bottom:16px}
+  .hero p{font-size:1.1rem;max-width:640px;opacity:.92;margin-bottom:28px}
+  .btn{display:inline-block;background:var(--amarelo);color:#3a2c00;font-weight:700;padding:12px 22px;border-radius:99px;text-decoration:none}
+  .btn.sec{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.6);margin-left:8px}
+
+  section{padding:64px 0}
+  section.alt{background:var(--verde-claro)}
+  h2{font-size:1.8rem;color:var(--verde-esc);margin-bottom:8px}
+  .sub{color:var(--cinza);margin-bottom:32px;max-width:680px}
+
+  .grid{display:grid;gap:20px}
+  .g2{grid-template-columns:repeat(2,1fr)} .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)}
+  .card{background:#fff;border:1px solid var(--borda);border-radius:var(--raio);padding:22px}
+  .card h3{font-size:1.1rem;margin-bottom:6px;color:var(--verde-esc)}
+  .card p{color:var(--cinza);font-size:.95rem}
+  .icone{width:44px;height:44px;border-radius:12px;background:var(--verde-claro);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+  .icone svg{width:24px;height:24px;stroke:var(--verde);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+  .itens{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+  .chip{background:#fff;border:1px solid var(--borda);padding:6px 14px;border-radius:99px;font-size:.92rem}
+
+  /* Números */
+  .num{text-align:center}
+  .num strong{display:block;font-size:2.2rem;color:var(--verde);line-height:1.1}
+  .num span{color:var(--cinza);font-size:.9rem}
+  .fonte{font-size:.8rem;color:var(--cinza);margin-top:14px}
+
+  /* Metais */
+  .metal{border-left:4px solid var(--vermelho)}
+  .metal h3{color:var(--vermelho)}
+
+  /* Passos */
+  .passos{counter-reset:p;list-style:none}
+  .passos li{counter-increment:p;position:relative;padding:0 0 22px 58px}
+  .passos li::before{content:counter(p);position:absolute;left:0;top:0;width:40px;height:40px;border-radius:50%;background:var(--verde);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+  .passos h3{font-size:1.05rem;color:var(--verde-esc)}
+  .passos p{color:var(--cinza)}
+
+  /* Pontos de coleta */
+  .ponto{display:flex;flex-direction:column;gap:6px}
+  .ponto .tipo{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--verde)}
+  .destaque{border:2px solid var(--verde)}
+  .aviso{background:#fff8e1;border:1px solid #f1d27a;border-radius:var(--raio);padding:14px 18px;margin-top:20px;font-size:.92rem}
+
+  /* Quiz */
+  .quiz{max-width:640px;margin:0 auto;text-align:center}
+  .quiz .item{font-size:1.4rem;font-weight:700;margin:18px 0}
+  .quiz button.op{font:inherit;font-weight:600;border:2px solid var(--verde);background:#fff;color:var(--verde);padding:10px 24px;border-radius:99px;margin:4px;cursor:pointer}
+  .quiz button.op:hover{background:var(--verde);color:#fff}
+  .resposta{min-height:56px;margin-top:16px;font-weight:500}
+  .placar{color:var(--cinza);font-size:.9rem;margin-top:8px}
+
+  /* FAQ */
+  details{background:#fff;border:1px solid var(--borda);border-radius:var(--raio);padding:16px 20px;margin-bottom:12px}
+  summary{cursor:pointer;font-weight:600;color:var(--verde-esc)}
+  details p{margin-top:10px;color:var(--cinza)}
+
+  footer{background:var(--verde-esc);color:#d6eadf;padding:36px 0;font-size:.9rem}
+  footer strong{color:#fff}
+
+  @media (max-width:820px){
+    .g3,.g4{grid-template-columns:repeat(2,1fr)}
+    .menu{display:none;position:absolute;top:64px;left:0;right:0;background:#fff;flex-direction:column;gap:0;border-bottom:1px solid var(--borda)}
+    .menu.aberto{display:flex}
+    .menu a{display:block;padding:14px 20px}
+    .btn-menu{display:block}
+    .hero h1{font-size:1.9rem}
+  }
+  @media (max-width:540px){
+    .g2,.g3,.g4{grid-template-columns:1fr}
+    .btn.sec{margin:10px 0 0}
+  }
+  @media print{
+    header{position:static}
+    section,.hero{padding:36px 0}
+    .card,details,.passos li{break-inside:avoid}
+    .btn-menu{display:none}
+    h2,.sub{break-after:avoid}
+    #quiz,#oque .g4,.grid{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#inicio" class="logo">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="#1f7a4d"/><path d="M10 19c0-5 4-9 12-9-1 7-5 11-10 11-1 0-2 0-2-2zm1 2c2-3 5-5 8-7" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+      E-lixo Consciente
+    </a>
+    <button class="btn-menu" aria-label="Abrir menu" onclick="document.querySelector('.menu').classList.toggle('aberto')"><span></span><span></span><span></span></button>
+    <ul class="menu">
+      <li><a href="#oque">O que é</a></li>
+      <li><a href="#riscos">Riscos</a></li>
+      <li><a href="#descartar">Como descartar</a></li>
+      <li><a href="#reaproveitar">Reaproveitar</a></li>
+      <li><a href="#onde">Onde levar</a></li>
+      <li><a href="#quiz">Teste</a></li>
+    </ul>
+  </div>
+</header>
+
+<div class="hero" id="inicio">
+  <div class="container">
+    <span class="tag">Campanha da Secretaria Municipal de Educação de Taciba</span>
+    <h1>Seu eletrônico velho não é lixo comum.</h1>
+    <p>Celulares, carregadores, pilhas e computadores guardados na gaveta ou jogados no lixo podem contaminar o solo e a água. Aqui você aprende a reaproveitar e a descartar do jeito certo.</p>
+    <a href="#onde" class="btn">Onde descartar</a>
+    <a href="#descartar" class="btn sec">Como fazer</a>
+  </div>
+</div>
+
+<section id="oque">
+  <div class="container">
+    <h2>O que é lixo eletrônico?</h2>
+    <p class="sub">É todo aparelho que funciona com tomada, pilha ou bateria e que não é mais usado, seja porque quebrou, ficou ultrapassado ou foi substituído.</p>
+    <div class="itens">
+      <span class="chip">Celulares e tablets</span><span class="chip">Carregadores e cabos</span>
+      <span class="chip">Pilhas e baterias</span><span class="chip">Computadores e notebooks</span>
+      <span class="chip">Teclados, mouses e fones</span><span class="chip">Impressoras e cartuchos</span>
+      <span class="chip">Monitores e TVs</span><span class="chip">Controles remotos</span>
+      <span class="chip">Pequenos eletrodomésticos</span><span class="chip">Roteadores e modems</span>
+    </div>
+
+    <div class="grid g4" style="margin-top:40px">
+      <div class="card num"><strong>62 mi</strong><span>de toneladas de lixo eletrônico geradas no mundo em 2022</span></div>
+      <div class="card num"><strong>22,3%</strong><span>foi coletado e reciclado de forma documentada</span></div>
+      <div class="card num"><strong>2,4 mi</strong><span>de toneladas geradas no Brasil em 2022</span></div>
+      <div class="card num"><strong>82 mi</strong><span>de toneladas previstas para 2030 no mundo</span></div>
+    </div>
+    <p class="fonte">Fonte: The Global E-waste Monitor 2024 (ONU – ITU/UNITAR).</p>
+  </div>
+</section>
+
+<section class="alt" id="riscos">
+  <div class="container">
+    <h2>Por que é perigoso jogar no lixo comum?</h2>
+    <p class="sub">Dentro dos aparelhos existem metais pesados. No lixo comum, eles se soltam com o tempo, chegam ao solo e aos rios e podem prejudicar a saúde de pessoas e animais.</p>
+    <div class="grid g3">
+      <div class="card metal"><h3>Chumbo</h3><p>Presente em placas de circuito e telas antigas. Pode afetar o sistema nervoso, os rins e o desenvolvimento das crianças.</p></div>
+      <div class="card metal"><h3>Mercúrio</h3><p>Encontrado em algumas telas e lâmpadas. Contamina a água e se acumula nos peixes e na cadeia alimentar.</p></div>
+      <div class="card metal"><h3>Cádmio</h3><p>Usado em pilhas e baterias recarregáveis. É tóxico e pode se acumular no organismo, afetando rins e ossos.</p></div>
+    </div>
+    <div class="grid g2" style="margin-top:20px">
+      <div class="card">
+        <div class="icone"><svg viewBox="0 0 24 24"><path d="M12 2v6M5 12H2M22 12h-3M6 6 4 4M18 6l2-2"/><circle cx="12" cy="15" r="6"/></svg></div>
+        <h3>Risco de incêndio</h3><p>Baterias de lítio (celular, notebook) podem pegar fogo quando amassadas no caminhão de lixo ou no aterro.</p>
+      </div>
+      <div class="card">
+        <div class="icone"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg></div>
+        <h3>Desperdício de recursos</h3><p>Ouro, cobre, prata e plástico podem ser recuperados na reciclagem, evitando nova extração de minérios.</p>
+      </div>
+    </div>
+    <p class="fonte">A Política Nacional de Resíduos Sólidos (Lei nº 12.305/2010) determina que eletroeletrônicos, pilhas e baterias passem pela logística reversa, ou seja, voltem ao fabricante para reaproveitamento ou reciclagem.</p>
+  </div>
+</section>
+
+<section id="descartar">
+  <div class="container">
+    <h2>Como descartar em 5 passos</h2>
+    <p class="sub">Simples, rápido e seguro para você e para o meio ambiente.</p>
+    <ol class="passos">
+      <li><h3>Veja se ainda dá para usar</h3><p>Funciona ou tem conserto simples? Antes de descartar, considere consertar, doar ou repassar (veja a seção “Reaproveitar”).</p></li>
+      <li><h3>Apague seus dados</h3><p>Em celulares, computadores e tablets, faça backup, saia das suas contas e restaure para as configurações de fábrica. Retire chips e cartões de memória.</p></li>
+      <li><h3>Separe pilhas e baterias</h3><p>Quando for possível retirar, separe-as do aparelho. Baterias estufadas ou danificadas devem ser embaladas em saco plástico e não podem ser furadas.</p></li>
+      <li><h3>Não desmonte</h3><p>Abrir aparelhos em casa pode liberar substâncias tóxicas e causar acidentes. Entregue o equipamento inteiro.</p></li>
+      <li><h3>Leve a um ponto de coleta</h3><p>Nunca coloque no lixo comum nem no reciclável da rua. Leve ao ponto de coleta da campanha ou a um dos locais indicados abaixo.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="alt" id="reaproveitar">
+  <div class="container">
+    <h2>Dá para reaproveitar!</h2>
+    <p class="sub">O melhor lixo eletrônico é aquele que nem chega a virar lixo.</p>
+    <div class="grid g3">
+      <div class="card">
+        <div class="icone"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg></div>
+        <h3>Conserte</h3><p>Trocar bateria, tela ou carregador costuma custar bem menos que um aparelho novo e prolonga sua vida útil.</p>
+      </div>
+      <div class="card">
+        <div class="icone"><svg viewBox="0 0 24 24"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 21V7M12 7H8a2 2 0 1 1 0-4c3 0 4 4 4 4zm0 0h4a2 2 0 1 0 0-4c-3 0-4 4-4 4z"/></svg></div>
+        <h3>Doe</h3><p>Computadores e celulares funcionando podem ajudar escolas, projetos sociais ou famílias. Formate antes de doar.</p>
+      </div>
+      <div class="card">
+        <div class="icone"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></div>
+        <h3>Dê nova função</h3><p>Um celular antigo vira despertador, câmera de segurança, rádio ou tocador de música. Um notebook velho pode servir para estudos.</p>
+      </div>
+      <div class="card">
+        <div class="icone"><svg viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg></div>
+        <h3>Compre com consciência</h3><p>Antes de trocar, pergunte: eu realmente preciso de um novo? Prefira produtos duráveis e com assistência técnica.</p>
+      </div>
+      <div class="card">
+        <div class="icone"><svg viewBox="0 0 24 24"><path d="M7 7h10v10H7z"/><path d="M4 4l3 3M20 4l-3 3M4 20l3-3M20 20l-3-3"/></svg></div>
+        <h3>Use recarregáveis</h3><p>Pilhas recarregáveis duram centenas de ciclos e geram muito menos resíduo do que as comuns.</p>
+      </div>
+      <div class="card">
+        <div class="icone"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/></svg></div>
+        <h3>Cuide bem</h3><p>Capinha, película, carregador original e não deixar a bateria superaquecer fazem o aparelho durar mais.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="onde">
+  <div class="container">
+    <h2>Onde descartar</h2>
+    <p class="sub">Leve seu lixo eletrônico a um destes locais. Nunca coloque no lixo comum.</p>
+    <div class="grid g2">
+      <div class="card ponto destaque">
+        <span class="tipo">Ponto de coleta da campanha</span>
+        <h3>Secretaria Municipal de Educação de Taciba</h3>
+        <p>Av. Moisés Calixto, 563 – Centro, Taciba/SP</p>
+        <p>Caixa identificada para celulares, carregadores, cabos, pilhas, baterias, computadores e periféricos, durante o período da campanha.</p>
+      </div>
+      <div class="card ponto">
+        <span class="tipo">Pilhas e baterias</span>
+        <h3>Supermercados e lojas com coletor</h3>
+        <p>Muitos supermercados, farmácias e lojas de eletrônicos têm caixas coletoras de pilhas e baterias. Pergunte no balcão.</p>
+      </div>
+      <div class="card ponto">
+        <span class="tipo">Celulares e acessórios</span>
+        <h3>Lojas de operadoras e assistências</h3>
+        <p>Lojas de operadoras de telefonia e de fabricantes costumam receber celulares, baterias e carregadores usados, de qualquer marca.</p>
+      </div>
+      <div class="card ponto">
+        <span class="tipo">Região</span>
+        <h3>Mutirão do Lixo Eletrônico – Presidente Prudente</h3>
+        <p>Campanha da Prefeitura de Presidente Prudente que recebe eletrônicos da população. Acompanhe as datas da próxima edição nos canais oficiais da prefeitura.</p>
+      </div>
+    </div>
+    <div class="card ponto" style="margin-top:20px">
+      <span class="tipo">Encontre outros pontos</span>
+      <h3>Busque o ponto mais perto de você</h3>
+      <p>As entidades responsáveis pela logística reversa de eletroeletrônicos mantêm buscadores de pontos de entrega voluntária em todo o Brasil:
+        <a href="https://greeneletron.org.br" target="_blank" rel="noopener">Green Eletron</a> e
+        <a href="https://abree.org.br" target="_blank" rel="noopener">ABREE</a>.</p>
+    </div>
+    <div class="aviso"><strong>Dica:</strong> antes de ir, ligue ou confira no site se o local está recebendo o tipo de aparelho que você quer descartar.</div>
+  </div>
+</section>
+
+<section class="alt" id="quiz">
+  <div class="container quiz">
+    <h2>Teste rápido: isso é lixo eletrônico?</h2>
+    <p class="sub" style="margin:0 auto">Responda e veja se você já sabe separar.</p>
+    <div class="item" id="q-item">Carregador de celular</div>
+    <div>
+      <button class="op" onclick="responder(true)">É lixo eletrônico</button>
+      <button class="op" onclick="responder(false)">Não é</button>
+    </div>
+    <div class="resposta" id="q-resp"></div>
+    <div class="placar" id="q-placar"></div>
+  </div>
+</section>
+
+<section id="duvidas">
+  <div class="container">
+    <h2>Dúvidas frequentes</h2>
+    <p class="sub">O que as pessoas mais perguntam sobre o descarte de eletrônicos.</p>
+    <details><summary>Posso colocar pilhas no lixo reciclável?</summary><p>Não. Pilhas e baterias têm descarte próprio e devem ir para coletores específicos ou pontos de entrega. No reciclável comum elas contaminam os outros materiais.</p></details>
+    <details><summary>Meu celular quebrado tem algum valor?</summary><p>Sim. Ele contém metais como cobre, ouro e prata que podem ser recuperados na reciclagem, além de peças que às vezes servem para consertar outros aparelhos.</p></details>
+    <details><summary>E os meus dados pessoais?</summary><p>Antes de entregar, faça backup, saia das suas contas e restaure o aparelho para as configurações de fábrica. Retire o chip e o cartão de memória.</p></details>
+    <details><summary>Geladeira, fogão e máquina de lavar também são lixo eletrônico?</summary><p>Sim, mas por serem grandes não são recebidos em caixas de coleta. Procure a prefeitura ou a loja onde comprou um novo aparelho, pois muitas recolhem o antigo.</p></details>
+    <details><summary>Quem é responsável pelo lixo eletrônico?</summary><p>Todos. A Lei nº 12.305/2010 prevê a responsabilidade compartilhada: o consumidor entrega no ponto de coleta, e fabricantes, importadores e comerciantes garantem a reciclagem ou destinação correta.</p></details>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p><strong>Descarte Consciente de Lixo Eletrônico</strong> – Projeto de extensão desenvolvido na Secretaria Municipal de Educação de Taciba/SP.</p>
+    <p>Victor Gabriel Simeão Rodrigues – Engenharia de Software · Projeto de Formação e Carreira II · Unoeste, 2026.</p>
+  </div>
+</footer>
+
+<script>
+  // Fecha o menu ao clicar em um link (celular)
+  document.querySelectorAll('.menu a').forEach(a => a.addEventListener('click', () =>
+    document.querySelector('.menu').classList.remove('aberto')));
+
+  // Teste rápido
+  const perguntas = [
+    {item:'Carregador de celular', sim:true, exp:'Carregadores e cabos são eletrônicos e devem ir para o ponto de coleta.'},
+    {item:'Casca de banana', sim:false, exp:'É lixo orgânico. Pode virar adubo em uma composteira.'},
+    {item:'Pilha AA usada', sim:true, exp:'Pilhas e baterias contêm metais pesados e precisam de coleta específica.'},
+    {item:'Garrafa PET', sim:false, exp:'É plástico reciclável. Vai para a coleta seletiva comum.'},
+    {item:'Mouse quebrado', sim:true, exp:'Periféricos de computador são lixo eletrônico, mesmo pequenos.'},
+    {item:'Controle remoto da TV', sim:true, exp:'Tem placa eletrônica e pilhas: leve ao ponto de coleta (retire as pilhas).'},
+    {item:'Caixa de papelão', sim:false, exp:'É papel reciclável. Vai para a coleta seletiva.'},
+    {item:'Fone de ouvido', sim:true, exp:'Fones, com ou sem fio, são eletrônicos e têm descarte próprio.'}
+  ];
+  let atual = 0, acertos = 0, respondidas = 0, bloqueado = false;
+  function mostrar(){ document.getElementById('q-item').textContent = perguntas[atual].item; }
+  function responder(resp){
+    if (bloqueado) return;
+    bloqueado = true;
+    const p = perguntas[atual], ok = resp === p.sim;
+    respondidas++; if (ok) acertos++;
+    const r = document.getElementById('q-resp');
+    r.innerHTML = (ok ? '<span style="color:#1f7a4d">✔ Acertou!</span> ' : '<span style="color:#c0392b">✘ Ops!</span> ') + p.exp;
+    document.getElementById('q-placar').textContent = `Acertos: ${acertos} de ${respondidas}`;
+    setTimeout(() => {
+      atual = (atual + 1) % perguntas.length;
+      mostrar(); bloqueado = false;
+      if (atual === 0) { acertos = 0; respondidas = 0; }
+    }, 2200);
+  }
+  mostrar();
+</script>
+</body>
+</html>
